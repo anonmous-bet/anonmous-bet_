@@ -2,9 +2,9 @@
 class ThoughtsSharingApp {
     constructor() {
         // Replace with your JSONBin.io API key and bin ID
-        this.API_KEY = 'YOUR_JSONBIN_API_KEY';
-        this.BIN_ID = 'YOUR_BIN_ID';
-        this.API_URL = `https://api.jsonbin.io/v3/b/${this.BIN_ID}`;
+        this.API_KEY = '$2a$10$ZTJEYKZcZEuS2f3tD.eMpe4C2n7F2bRNm.tc6D.mRP1JBzT5VP296';
+        this.BIN_ID = '675d3ae6e41b4d34e46532f0';
+        this.API_URL = `https://api.jsonbin.io/v3/b/${this.675d3ae6e41b4d34e46532f0}`;
         
         this.username = localStorage.getItem('username') || '';
         this.posts = [];
@@ -26,7 +26,7 @@ class ThoughtsSharingApp {
         try {
             const response = await fetch(this.API_URL, {
                 headers: {
-                    'X-Master-Key': this.API_KEY
+                    'X-Master-Key': this.$2a$10$ZTJEYKZcZEuS2f3tD.eMpe4C2n7F2bRNm.tc6D.mRP1JBzT5VP296
                 }
             });
             const data = await response.json();
@@ -45,7 +45,7 @@ class ThoughtsSharingApp {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Master-Key': this.API_KEY
+                    'X-Master-Key': this.$2a$10$ZTJEYKZcZEuS2f3tD.eMpe4C2n7F2bRNm.tc6D.mRP1JBzT5VP296
                 },
                 body: JSON.stringify({ posts: this.posts })
             });
