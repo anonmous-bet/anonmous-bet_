@@ -4,92 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Thoughts</title>
+    <title>Shared Thoughts</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Firebase SDK -->
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBgtocSchzMNE4DwDAV-vkF_UwjoT83lIE",
-  authDomain: "my-thoughts-68002.firebaseapp.com",
-  databaseURL: "https://my-thoughts-68002-default-rtdb.firebaseio.com",
-  projectId: "my-thoughts-68002",
-  storageBucket: "my-thoughts-68002.firebasestorage.app",
-  messagingSenderId: "843029921336",
-  appId: "1:843029921336:web:aef82b2d148af7f552f0cd",
-  measurementId: "G-DMHEC53R7V"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-    //<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-    //<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
-    //<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <h1>My Thoughts</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#posts">Posts</a></li>
-                <li><a href="#about">About</a></li>
-                <li id="auth-status">
-                    <button id="login-btn">Login</button>
-                    <button id="logout-btn" style="display: none;">Logout</button>
-                </li>
-            </ul>
-        </nav>
+        <h1>Shared Thoughts</h1>
+        <div id="user-section">
+            <input type="text" id="username" placeholder="Your username">
+            <button onclick="setUsername()">Set Username</button>
+        </div>
     </header>
 
     <main>
-        <div id="auth-container">
-            <div id="login-form" class="auth-form">
-                <h2>Login</h2>
-                <input type="email" id="login-email" placeholder="Email" required>
-                <input type="password" id="login-password" placeholder="Password" required>
-                <button onclick="login()">Login</button>
-                <p>Don't have an account? <a href="#" onclick="toggleAuth()">Sign up</a></p>
-            </div>
-
-            <div id="signup-form" class="auth-form" style="display: none;">
-                <h2>Sign Up</h2>
-                <input type="email" id="signup-email" placeholder="Email" required>
-                <input type="password" id="signup-password" placeholder="Password" required>
-                <button onclick="signup()">Sign Up</button>
-                <p>Already have an account? <a href="#" onclick="toggleAuth()">Login</a></p>
-            </div>
-        </div>
-
-        <section id="create-post" style="display: none;">
-            <h2>Share Your Thoughts</h2>
+        <section id="post-form-section">
             <form id="post-form">
                 <input type="text" id="post-title" placeholder="Title" required>
-                <textarea id="post-content" placeholder="Write your thoughts..." required></textarea>
-                <button type="submit">Post</button>
+                <textarea id="post-content" placeholder="Your thoughts..." required></textarea>
+                <button type="submit">Share</button>
             </form>
         </section>
 
-        <section id="posts-container">
-            <h2>Recent Posts</h2>
-            <div id="posts-list">
-                <!-- Posts will be added here dynamically -->
-            </div>
+        <section id="posts-section">
+            <h2>Recent Thoughts</h2>
+            <div id="posts-container">Loading posts...</div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 My Thoughts. All rights reserved.</p>
-    </footer>
-
-    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
